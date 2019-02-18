@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/MainPage.css';
-import RegisterBox from '../components/RegisterBox';
+import AddEmpBox from '../components/AddEmployeeBox';
 class AddEmployeeMainPage extends Component {
     constructor(props) {
         super(props);
@@ -12,7 +12,7 @@ class AddEmployeeMainPage extends Component {
     render() {
         return (
             <div className="card-container">
-                <RegisterBox/>
+                <AddEmpBox/>
             </div>
         );
     }

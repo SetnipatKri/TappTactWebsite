@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import '../css/MainPage.css';
 import ReactTable from 'react-table'
 import "react-table/react-table.css"
-import {Link,Route,Switch} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 class EmployeeListMainPage extends Component {
     constructor(props) {

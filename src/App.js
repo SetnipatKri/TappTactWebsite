@@ -13,10 +13,6 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import {
-  CSSTransition,
-  TransitionGroup,
-} from 'react-transition-group';
 class App extends Component {
 
   render() {
@@ -39,7 +35,7 @@ class App extends Component {
   }
 }
 
-{/* <div>
+/* <div>
 <Route render={({ location }) => (
   <TransitionGroup>
     <CSSTransition
@@ -61,5 +57,5 @@ class App extends Component {
     </CSSTransition>
   </TransitionGroup>
 )} />
-</div> */}
+</div> */
 export default App;
