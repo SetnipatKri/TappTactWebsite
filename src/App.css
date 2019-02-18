@@ -22,6 +22,26 @@
   color: #61dafb;
 }
 
+.fade-appear,
+.fade-enter {
+    opacity: 0;
+    z-index: 1;
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms linear 150ms;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity 100ms linear;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -30,3 +50,4 @@
     transform: rotate(360deg);
   }
 }
+
