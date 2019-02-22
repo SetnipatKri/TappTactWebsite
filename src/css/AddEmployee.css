@@ -14,6 +14,20 @@ body,
     text-align: left;
 }
 
+.upload-image-box {
+    margin-top:30px;
+    margin-bottom: 10px;
+    display: flex;
+    position: relative;
+}
+
+.detail-upload-picture{
+    display: flex;
+    width: 150px;
+    height: 150px;
+    background-color: oldlace;
+    margin-left:30px;
+}
 
 .labeling {
     font-family: Oxygen, sans-serif;
@@ -36,7 +50,7 @@ body,
     position: relative;
     width: 100%;
     z-index: 20;
-    margin :20px;
+    margin-left:20px;
     flex-direction: column;
     border-radius: 6px;
     padding: 24px;
@@ -45,7 +59,6 @@ body,
 .allbox{
     display:flex;
     width:100%;
-    margin:20;
     flex-direction: row;
 }
 
@@ -53,6 +66,24 @@ body,
     align-items: center
 }
 
+.upload-user-btn {
+    width: 150px;
+    border: 0;
+    height: 40px;
+    margin-left:30px;
+    font-size: 10   px;
+    border-radius: 3px;
+    font-family: Oxygen, sans-serif;
+    background-color: rgba(15, 15, 15, 0.03);
+    border: 2px solid #417cef;
+    transition: background-color 0.3s ease-out;
+    cursor: pointer;
+}
+.upload-user-btn:hover,
+.upload-user-btn:focus {
+    background-color: #417cef;
+    color: white;
+}
 
 .adduser-btn {
     width: 100%;

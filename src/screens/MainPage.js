@@ -23,9 +23,9 @@ class MainPage extends Component {
                     <NavItem>
                         <NavLink href="/usage" className="header-text">Card Usage</NavLink>
                     </NavItem>
-                    <NavItem>
+                    {/* <NavItem>
                         <NavLink href="/package" className="header-text">Package</NavLink>
-                    </NavItem>
+                    </NavItem> */}
                     <NavItem>
                         <NavLink href="/" className="header-text">Logout</NavLink>
                     </NavItem>

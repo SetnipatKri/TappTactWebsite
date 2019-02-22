@@ -8,7 +8,7 @@ class EmployeeListMainPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            users: []
+            users: [],
         };
     }
 
@@ -21,6 +21,17 @@ class EmployeeListMainPage extends Component {
         })
     }
 
+    deleteRow(id){
+
+        const index = this.state.users.findIndex(users=>{
+            return users.id===id
+        })
+        let usertemp = [...this.state.users]
+        //console.log(usertemp)
+        usertemp.splice(index,1)
+        this.setState({users:usertemp})
+    }
+
     render() {
         const columns = [
             {
@@ -29,21 +40,46 @@ class EmployeeListMainPage extends Component {
                 style:{
                     textAlign:"center"
                 },
-                width:100,
-                maxWidth:100,
+                width:50,
+                maxWidth:50,
                 midWidth:50
             },
             {
-                Header: "Name",
+                Header: "Image",
+                Cell: props=>{
+                    return(
+                        <div>
+                         <img  src={require('../resource/icon_user.png')} className="pic-image" />
+                        </div>
+                    )
+                },
+                width:100,
+                maxWidth:100,
+                midWidth:100
+            },
+            {
+                Header: "FName",
                 accessor: "name",
                 sortable: false,
                 filterable: true,
                 style:{
                     textAlign:"left"
                 },
-                width:500,
-                maxWidth:100,
-                midWidth:50
+                width:200,
+                maxWidth:200,
+                midWidth:150
+            },
+            {
+                Header: "LName",
+                accessor: "name",
+                sortable: false,
+                filterable: true,
+                style:{
+                    textAlign:"left"
+                },
+                width:200,
+                maxWidth:200,
+                midWidth:150
             },
             {
                 Header: "Email",
@@ -53,7 +89,19 @@ class EmployeeListMainPage extends Component {
                 style:{
                     textAlign:"left"
                 },
-                width:500,
+                width:300,
+                maxWidth:900,
+                midWidth:600
+            },
+            {
+                Header: "Department",
+
+                sortable: false,
+                filterable: true,
+                style:{
+                    textAlign:"left"
+                },
+                width:200,
                 maxWidth:900,
                 midWidth:600
             },
@@ -62,13 +110,13 @@ class EmployeeListMainPage extends Component {
                 Cell: props=>{
                     return(
                         <div className="table-box">
-                        <Link to ="/detail">
+                        <Link className="button-blue" to ="/detail">
                          <button className="button-blue">View</button>
                          </Link>
                         </div>
                     )
                 },
-                width:100,
+                width:90,
                 maxWidth:100,
                 midWidth:50
             },
@@ -77,11 +125,13 @@ class EmployeeListMainPage extends Component {
                 Cell: props=>{
                     return(
                         <div className="table-box">
+                        <Link className="button-blue" to ="/update">
                         <button className="button-blue">Update</button>
+                        </Link>
                        </div>
                     )
                 },
-                width:100,
+                width:90,
                 maxWidth:100,
                 midWidth:50
             },
@@ -90,11 +140,11 @@ class EmployeeListMainPage extends Component {
                 Cell: props=>{
                     return(
                         <div className="table-box">
-                        <button className="button-red">Delete</button>
+                        <button className="button-red" onClick={()=>this.deleteRow(props.original.id)}>Delete</button>
                        </div>
                     )
                 },
-                width:100,
+                width:90,
                 maxWidth:100,
                 midWidth:50
             },
@@ -102,10 +152,11 @@ class EmployeeListMainPage extends Component {
         ]
         return (
             <div className="card-container">
-               
+                <div className="table-container">
                 <ReactTable columns={columns} data={this.state.users} defaultPageSize={10} noTextData={"Loading.."}>
 
                 </ReactTable>
+                </div>
             </div>
         );
     }

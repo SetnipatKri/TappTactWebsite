@@ -8,6 +8,7 @@ import CardUsageMainPage from './screens/CardUsageMainPage';
 import EmployeeListMainPage from './screens/EmployeeListMainPage';
 import PackageMainPage from './screens/PackageMainPage';
 import EmployeeDetailPage from './screens/EmployeeDetailPage';
+import UpdateEmployeePage from './screens/UpdateEmployeePage';
 import {
 
   Route,
@@ -27,7 +28,8 @@ class App extends Component {
             <Route path="/add" component={AddEmployeeMainPage} />
             <Route path="/usage" component={CardUsageMainPage} />
             <Route path="/package" component={PackageMainPage} />
-            <Route path="/detail" component={EmployeeDetailPage} />  
+            <Route path="/detail" component={EmployeeDetailPage} /> 
+            <Route path="/update" component={UpdateEmployeePage} />  
           </Fragment>
         </Switch>
       </div>
